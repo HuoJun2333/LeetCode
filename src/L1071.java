@@ -1,7 +1,3 @@
-/**
- * @author xiexin
- * @create 2020-03-12 9:47 下午
- */
 
 /**
  * 对于字符串 S 和 T，只有在 S = T + ... + T（T 与自身连接 1 次或多次）时，我们才认定 “T 能除尽 S”。
@@ -36,6 +32,13 @@
  * 链接：https://leetcode-cn.com/problems/greatest-common-divisor-of-strings
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
+
+
+/**
+ * @author xiexin
+ * @create 2020-03-12 9:47 下午
+ */
+
 public class L1071 {
     public static void main(String[] args) {
         String str1 = "ABCABC";
