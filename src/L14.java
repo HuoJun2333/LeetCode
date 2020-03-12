@@ -1,4 +1,3 @@
-
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。
  *
@@ -26,7 +25,6 @@
  * @author xiexin
  * @create 2020-03-12 10:14 下午
  */
-
 public class L14 {
     public static void main(String[] args) {
         String[] strs = {"flower", "flow", "flight"};
