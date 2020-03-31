@@ -12,31 +12,26 @@
  * @author xiexin
  * @create 2020-03-12 11:27 下午
  */
-import java.util.ArrayList;
-
 public class L204 {
-    (
-    //报错表示未成功
+
+    /**
+     *
+     * 厄拉多塞筛法
+     */
     public static void main(String[] args) {
         System.out.println(countPrimes(10));
     }
     public static int countPrimes(int n) {
-        if (n == 2) {
-            return 1;
-        }
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 2; i < n+1; i++) {
-            list.add(i);
-        }
-        int nn = list.size();
-        for (int i = 0; i < nn; i++) {
-            for (int j = i+1; j < nn; j++) {
-                if ((list.get(j) % list.get(i)) == 0) {
-                    list.remove(j);
-                    nn --;
+        boolean[] isPrime = new boolean[n + 1];
+        int count=0;
+        for(int i=2; i<n; i++){
+            if(isPrime[i]== false){
+                count++;
+                for(int j=i+i; j<n; j=j+i){
+                    isPrime[j]=true;
                 }
             }
         }
-        return list.size();
+        return count;
     }
 }

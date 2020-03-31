@@ -24,39 +24,40 @@
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+import java.util.Arrays;
+import java.util.HashMap;
+
 /**
  * @author xiexin
  * @create 2020-03-12 11:34 下午
  */
-import java.util.ArrayList;
-import java.util.List;
-
 public class L350 {
-    /
+
     public static void main(String[] args) {
-		/*int[] nums1 = {1,2,2,1};
+		int[] nums1 = {1,2,2,1};
 		int[] nums2 = {2,2};
-		int[] a =intersect(nums1, nums2);
+		int[] a = intersect(nums1, nums2);
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i]+"  ");
-		}*/
+		}
     }
     public static int[] intersect(int[] nums1, int[] nums2) {
-        List<Integer> list = new ArrayList<>();
-        int n = Math.min(nums1.length, nums2.length);
-        int m = Math.max(nums1.length, nums2.length);
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if(nums1[i] == nums2[j]) {
-                    list.add(nums1[i]);
-                    break;
-                }
+        if (nums1.length > nums2.length) {
+            return intersect(nums2, nums1);
+        }
+        HashMap<Integer, Integer> m = new HashMap<>();
+        for (int n : nums1) {
+            m.put(n, m.getOrDefault(n, 0) + 1);
+        }
+        int k = 0;
+        for (int n : nums2) {
+            int cnt = m.getOrDefault(n, 0);
+            if (cnt > 0) {
+                nums1[k++] = n;
+                m.put(n, cnt - 1);
             }
         }
-        int[] a = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            a[i] = list.get(i);
-        }
-        return a;
+        return Arrays.copyOfRange(nums1, 0, k);
     }
+
 }
