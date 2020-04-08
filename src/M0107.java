@@ -47,7 +47,7 @@
  * @author xiexin
  * @create 2020-04-07 12:51 下午
  */
-public class L0107 {
+public class M0107 {
     public static void main(String[] args) {
         int n = 4;
         int[][] matrix = new int[n][n];
